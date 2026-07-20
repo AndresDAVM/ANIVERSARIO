@@ -116,11 +116,26 @@
   .card .eyebrow{ font-family:'JetBrains Mono', monospace; font-size:10.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--card-color,var(--gold)); }
   .card h2{ font-family:'Cormorant Garamond', serif; font-weight:500; font-style:italic; font-size:28px; margin:8px 0 16px; }
   .card .art{
-    width:100%; min-height:260px; max-height:46vh; border-radius:12px; margin-bottom:18px;
-    display:flex; align-items:center; justify-content:center; font-size:52px; overflow:hidden;
-    background: radial-gradient(circle at 30% 20%, color-mix(in srgb, var(--card-color,var(--gold)) 55%, #1a1c30), #101226);
-  }
-  .card .art img{ width:100%; height:100%; object-fit:contain; display:block; }
+    width:100%;
+    height:auto;
+    min-height:260px;
+    max-height:70vh;
+    border-radius:12px;
+    margin-bottom:18px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+}
+
+.card .art img,
+.card .art video{
+    width:100%;
+    height:auto;
+    max-height:70vh;
+    object-fit:contain;
+    border-radius:12px;
+}
   .card p{ font-size:15px; line-height:1.8; color:#cfd0e6; margin:0; white-space:pre-line; }
   .card .close{ position:absolute; top:16px; right:18px; background:rgba(0,0,0,.25); border:none; color:var(--ink-dim); font-size:18px; cursor:pointer; width:30px; height:30px; border-radius:50%; }
   .card.final h2{ font-size:32px; }
