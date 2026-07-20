@@ -218,23 +218,23 @@ const finalCard = {
   title:'Feliz primer aniversario, mi amor',
   text:`20 de julio de 2026
 
-Mi amor...
+Mi niña...
 
 Hoy hace un año comenzó oficialmente esto que hoy llamamos "nosotros". Qué raro se siente escribirlo, porque siento que fue hace nada, pero al mismo tiempo parece que hubiera pasado muchísimo desde ese día.
 
-La verdad, todavía me cuesta creer todo lo que hemos vivido en un solo año.
+La verdad, todavía me cuesta creer todo lo que hemos vivido en un solo año. Estoy tan... feliz...
 
-A veces me pongo a pensar en ese Andrés que apenas estaba empezando a conocerte y me da risa, porque jamás se hubiera imaginado que la niña con la que estaba hablando se iba a convertir en la persona más importante de su vida.
+A veces me pongo a pensar en ese Andrés que apenas estaba empezando a conocerte y me da risa, porque jamás se hubiera imaginado que la niña con la que estaba hablando se iba a convertir en la persona más importante de su vida, en toda su vida.
 
-Y es que un año... suena como un simple número, doce meses, trescientos sesenta y cinco días. Pero cuando pienso en todo lo que hay detrás de ese número, me doy cuenta de que significa muchísimo más.
+Y es que un año... suena como un simple número, 12 meses, 365 días. Pero cuando pienso en todo lo que hay detrás de ese número, me doy cuenta de que significa muchísimo más.
 
 Porque en ese año hubo llamadas hasta quedarnos dormidos, hubo risas que todavía recuerdo, hubo abrazos que me hicieron sentir que todo estaba bien, hubo salidas, fotos, canciones, detalles, conversaciones de horas, momentos donde ninguno de los dos quería despedirse y simplemente buscábamos cualquier excusa para seguir hablando un poquito más.
 
 Pero también hubo días difíciles.
 
-Hubo momentos donde sentimos que todo se estaba complicando, donde alguno de los dos tenía miedo, donde nos equivocamos, donde lloramos, donde pensamos demasiado las cosas o donde simplemente no sabíamos cómo expresar lo que sentíamos.
+Hubo momentos donde sentimos que todo se estaba complicando, donde alguno de los dos tenía miedo, donde nos equivocamos, donde hubo muchos errores, donde lloramos, donde pensamos demasiado las cosas o donde simplemente no sabíamos cómo expresar lo que sentíamos, incluso meses donde no hablamos, donde solo habia peleas y discucsiones.
 
-Y aun así... aquí estamos.
+Y aun así... aquí estamos, y eso me hace el niño más feliz de que siags siendo tú.
 
 Y creo que eso hace que este año valga todavía más.
 
@@ -603,7 +603,13 @@ function openFinalCard(){
   cardEyebrow.textContent = 'un año después';
   cardTitle.textContent = finalCard.title;
   cardText.textContent = finalCard.text;
+  if(finalCard.video){
+  cardArt.innerHTML = `<video src="${finalCard.video}" controls playsinline style="width:100%;height:100%;object-fit:cover;border-radius:12px;"></video>`;
+} else if(finalCard.image){
+  cardArt.innerHTML = `<img src="${finalCard.image}" style="width:100%;height:100%;object-fit:cover;border-radius:12px;">`;
+} else {
   cardArt.textContent = finalCard.icon;
+}
   overlay.classList.add('show');
 }
 document.getElementById('card-close').addEventListener('click',()=>overlay.classList.remove('show'));
