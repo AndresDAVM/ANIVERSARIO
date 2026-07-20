@@ -190,12 +190,12 @@ const memories = [
     text:'20 de junio de 2025. "Respeta Bro", el mensaje que lo empezó todo, donde desde ahí, no deje de hablar contigo, después de hablar esa noche, donde te cante, queria parecerte interesante, queria al otro día seguir hablando, y saque la excusa para hablarte, luego fuiste tu, y logramos seguir hablando. Realmente ame que hubieramos seguido hablando desde ese día hasta hoy. No sabía que ese mensaje iba a cambiar mi año entero.', image:'concierto.jpeg' },
   { id:'instagram', label:'20', date:'Nuestro Encuentro', icon:'📱', colorHex:0xa08fce,
     title:'Cuando Nos Vimos',
-    text:'Unos días después de empezar a hablar, quedamos en vernos, de salir con Sharon y Romero. Estuve tan precoupado de verme bien para ti, de levantarme temprano y verme lo mejor posible para ti. Cuando estuve esperandote en la estación estuve nervioso, no sabía como saludarte, que decir, tenía miedo de estar a tu lado y quedarme callado. Pero cuando te vi, Dios te veías tan hermosa, ese abrazo, lo fue todo, incluso todo ese día fue tan lindo, en el centro comercial, y cuando me despedí de ti, y me diste esos picos, regrese tan pero tan feliz, que hasta lloré de alegría.', image:null },
-  { id:'veinte', label:'cada 20', date:'todos los meses', icon:'📅', colorHex:0x7fa0d6,
-    title:'Por qué el 20 es nuestro',
-    text:'Desde entonces, cada 20 se volvió una fecha propia. Un pequeño recordatorio mensual de que seguimos eligiéndonos.', image:null },
-  { id:'extra1', label:'para ti', date:'edítame', icon:'🌱', colorHex:0xd9a441,
-    title:'(Espacio libre: un momento tuyo)',
+    text:'Unos días después de empezar a hablar, quedamos en vernos, de salir con Sharon y Romero. Estuve tan precoupado de verme bien para ti, de levantarme temprano y verme lo mejor posible para ti. Cuando estuve esperandote en la estación estuve nervioso, no sabía como saludarte, que decir, tenía miedo de estar a tu lado y quedarme callado. Pero cuando te vi, Dios te veías tan hermosa, ese abrazo, lo fue todo, incluso todo ese día fue tan lindo, en el centro comercial, y cuando me despedí de ti, y me diste esos picos, regrese tan pero tan feliz, que hasta lloré de alegría.', image:'primero.jpeg' },
+  { id:'veinte', label:'cada 20', date:'20 de Julio', icon:'📅', colorHex:0x7fa0d6,
+    title:'Novios Por Fin...',
+    text:'Pero como olvidar 1 mes después de hablarnos. Ese 20 de Julio, donde, tal vez no de la mejor forma, te pedí que fueras mi novia, después de un mes de tanto, donde ibamos a comer pizza con Acosta y Sharon. Donde te entregue una carta y el primer ramo de flores. Esos nervios se asimilaron a los que tuve cuando te vi en nuetsra salida, luego fuimos a Papa Jonhs, comimos pizza y armaste la carta y me aceptaste, no pude de la emoción sabiendo que ya eras mi novia. Gracias...', image:null, video:'novios.mp4' },
+  { id:'extra1', label:'para ti', date:'Cada 20', icon:'🌱', colorHex:0xd9a441,
+    title:'Porque el 20 es nuestro',
     text:'Este es un espacio de ejemplo. Reemplázalo por otro recuerdo que quieras contarle: un viaje, una risa, una promesa.', image:null },
   { id:'extra2', label:'para ti', date:'edítame', icon:'🎈', colorHex:0xc98fb0,
     title:'(Otro espacio libre)',
@@ -427,7 +427,13 @@ function openCard(m){
   cardEyebrow.textContent = m.date;
   cardTitle.textContent = m.title;
   cardText.textContent = m.text;
-  cardArt.innerHTML = m.image ? `<img src="${m.image}" style="width:100%;height:100%;object-fit:cover;border-radius:12px;">` : m.icon;
+  if(m.video){
+  cardArt.innerHTML = `<video src="${m.video}" controls playsinline style="width:100%;height:100%;object-fit:cover;border-radius:12px;"></video>`;
+} else if(m.image){
+  cardArt.innerHTML = `<img src="${m.image}" style="width:100%;height:100%;object-fit:cover;border-radius:12px;">`;
+} else {
+  cardArt.innerHTML = m.icon;
+}
   overlay.classList.add('show');
 }
 function openFinalCard(){
